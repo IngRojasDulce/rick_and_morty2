@@ -9,15 +9,10 @@ const reducer =(state = initialState, payload)=>{ // action es un objeto se pued
     switch (type){
        
         case ADD_FAV:
-            return {
-                ...state, myFavorites:  [...state.myFavorites, payload]   // MAP O FILTER PERO NO SE PUEDE PUSHEAR  
-            }
+            return { ...state, myFavorites: payload, allCharacters: payload };
+        
         case REMOVE_FAV:
-            return{
-                ...state, 
-                myFavorites : state.myFavorites.filter(fav => fav.id !== Number(payload)) //************* ID */ 
-            }
-
+            return { ...state, myFavorites: payload };
 
         default: // siempre retorna lo mismo 
         return { ...state}
